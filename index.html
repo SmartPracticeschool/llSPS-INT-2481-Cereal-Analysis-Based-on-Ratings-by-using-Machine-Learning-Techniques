@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+     <centre >
+	<h1>Predicting Cereal Rating Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+
+    	Name: <input type="text" name="name" placeholder="name" required="required" /></br>
+        Mfr: <input type="text" name="mfr" placeholder="mfr" required="required" /></br>
+		Type: <input type="text" name="type" placeholder="type" required="required" /></br>
+        Calories: <input type="text" name="calories" placeholder="calories" required="required" /></br>
+		Protein: <input type="text" name="protein" placeholder="protein" required="required" /></br>
+		Fat: <input type="text" name="fat" placeholder="fat" required="required" /></br>			
+		Sodium: <input type="text" name="sodium" placeholder="sodium" required="required" /></br>
+		Fiber: <input type="text" name="fiber" placeholder="fiber" required="required" /></br>
+		Carbo: <input type="text" name="carbo" placeholder="carbo" required="required" /></br>
+		Sugars: <input type="text" name="sugars" placeholder="sugars" required="required" /></br>
+        Potass: <input type="text" name="potass" placeholder="potass" required="required" /></br>
+		Vitamin: <input type="text" name="vitamins" placeholder="vitamins" required="required" /></br>
+		Shelf: <input type="text" name="shelf" placeholder="shelf" required="required" /></br>
+		Weight: <input type="text" name="weight" placeholder="weight" required="required" /></br>
+        Cups: <input type="text" name="cups" placeholder="cups" required="required" /></br>
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </centre>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
